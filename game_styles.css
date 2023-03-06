@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding:1px 20px ;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+.header-container{
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header-container img{
+    width: 250px;
+    height: auto;
+}
+
+.header-container button{
+    position: absolute;
+    align-self: flex-end;
+    justify-self:start;
+    cursor: pointer;
+
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background-image: url(images/background.jpg);
+    background-position: right;
+    background-size: cover;
+    font-size: 28px;
+    color: white;
+    opacity: .8;
+    transition: all 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.header-container button:hover{
+    margin-top: 12px;
+    margin-right: 2px;
+    transition: all 0.3s;
+}
+
+.timer{
+    color: white;
+}
+.timer label{
+    margin: 0;
+    padding: 0;
+}
+
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+    cursor: pointer;
+}
+  
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+@media screen and (max-width: 1440px){
+    #text{
+        font-size: 32px;
+    }
+    .timer label{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 800px){
+    #text{
+        font-size: 28px;
+        top: 40%;
+    }
+    .timer label{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 450px){
+    #text{
+        font-size: 24px;
+        top: 40%;
+    }
+    .timer label{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 300px){
+    #text{
+        font-size: 20px;
+        top: 40%;
+    }
+    .timer label{
+        font-size: 12px;
+    }
+}
+
+/*Game Cards*/
+.game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+.wrapper{
+    padding: 25px;
+    border-radius: 10px;
+    background: local;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .cards, .card, .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cards{
+    height: 800px;
+    width: 800px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .cards .card{
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;  }
+  .card.shake{
+    animation: shake 0.35s ease-in-out;
+  }
+  @keyframes shake {
+    0%, 100%{
+      transform: translateX(0);
+    }
+    20%{
+      
+      transform: translateY(-14px);
+    }
+    40%{
+      transform: translateX(11px);
+      transform: translateY(11px);
+    }
+    60%{
+      transform: translateX(-12px);
+      
+    }
+    80%{
+      transform: translateX(10px);
+      transform: translateY(20px);
+    }
+  }
+  .card .view{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 7px;
+    background-color: white;
+    pointer-events: none;
+    backface-visibility: hidden;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 22px 70px 4px;
+    transition: transform 0.25s linear;
+  }
+ 
+  .card .front-view img{
+    width: 120px;
+  }
+  .card .back-view img{
+    max-width: 145px;
+  }
+  .card .back-view{
+    transform: rotateY(-180deg);
+  }
+  .card.flip .back-view{
+    transform: rotateY(0);
+  }
+  .card.flip .front-view{
+    transform: rotateY(180deg);
+  }
+
+  @media screen and (max-width: 1600px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 550px;
+      width: 550px;
+    }
+    .card .front-view img{
+      width: 60px;
+    }
+    .card .back-view img{
+      max-width: 80px;
+    }
+    .header-container button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+    }
+    .header-container img{
+        width: 200px;
+        height: auto;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 550px;
+      width: 550px;
+    }
+    .card .front-view img{
+      width: 60px;
+    }
+    .card .back-view img{
+      max-width: 80px;
+    }
+    .header-container button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+    }
+    .header-container img{
+        width: 200px;
+        height: auto;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 600px;
+      width: 600px;
+    }
+    .card .front-view img{
+      width: 60px;
+    }
+    .card .back-view img{
+      max-width: 80px;
+    }
+    .header-container button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+    }
+    .header-container img{
+        width: 200px;
+        height: auto;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 600px;
+      width: 600px;
+    }
+    .card .front-view img{
+      width: 60px;
+    }
+    .card .back-view img{
+      max-width: 80px;
+    }
+    .header-container button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+    }
+    .header-container img{
+        width: 200px;
+        height: auto;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    }
+  }
+
+
+  @media screen and (max-width: 800px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 500px;
+      width: 500px;
+    }
+    .card .front-view img{
+      width: 60px;
+    }
+    .card .back-view img{
+      max-width: 80px;
+    }
+    .header-container button{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+    }
+    .header-container img{
+        width: 200px;
+        height: auto;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 20px;
+    }
+  }
+
+
+  @media screen and (max-width: 530px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 420px;
+      width: 420px;
+    }
+    .card .front-view img{
+      width: 50px;
+    }
+    .card .back-view img{
+      max-width: 70px;
+    }
+    .header-container button{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+    .header-container img{
+        width: 150px;}
+    .wrapper{
+        padding: 0;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 20px;
+    }
+        
+  }
+
+  @media screen and (max-width: 450px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 380px;
+      width: 380px;
+    }
+    .card .front-view img{
+      width: 50px;
+    }
+    .card .back-view img{
+      max-width: 70px;
+    }
+    .header-container button{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+    .header-container img{
+        width: 150px;}
+    .wrapper{
+        padding: 0;
+    }
+
+    .game{
+        align-items: start;
+        padding-top: 20px;
+    }
+        
+  }
+
+  @media screen and (max-width: 400px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 350px;
+      width: 350px;
+    }
+    .card .front-view img{
+      width: 40px;
+    }
+    .card .back-view img{
+      max-width: 50px;
+    }
+    .header-container button{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+    .header-container img{
+        width: 150px;}
+    .wrapper{
+        padding: 0;
+    }
+        
+    .game{
+        align-items: start;
+        padding-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 320px;
+      width: 320px;
+    }
+    .card .front-view img{
+      width: 40px;
+    }
+    .card .back-view img{
+      max-width: 50px;
+    }
+    .header-container button{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+    .header-container img{
+        width: 150px;}
+    .wrapper{
+        padding: 0;
+    }
+    .game{
+        align-items: start;
+        padding-top: 10px;
+    } 
+  }
+
+  @media screen and (max-width: 320px) {
+    *{
+        padding: 2px 2px;
+    }
+    .cards{
+      height: 290px;
+      width: 290px;
+    }
+    .card .front-view img{
+      width: 30px;
+    }
+    .card .back-view img{
+      max-width: 40px;
+    }
+    .header-container button{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        font-size: 14px;
+    }
+    .header-container img{
+        width: 120px;}
+    .wrapper{
+        padding: 0;
+    }
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    } 
+  }
+
+  @media screen and (max-width: 300px) {
+    *{
+        padding: 1px 1px;
+    }
+    .cards{
+      height: 250px;
+      width: 250px;
+    }
+    .card .front-view img{
+      width: 30px;
+    }
+    .card .back-view img{
+      max-width: 40px;
+    }
+    .header-container button{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        font-size: 14px;
+    }
+    .header-container img{
+        width: 120px;}
+    .wrapper{
+        padding: 0;
+    }
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    } 
+  }
+
+  @media screen and (max-width: 250px) {
+    *{
+        padding: 1px 1px;
+    }
+    .cards{
+      height: 210px;
+      width: 210px;
+    }
+    .card .front-view img{
+      width: 25px;
+    }
+    .card .back-view img{
+      max-width: 30px;
+    }
+    .header-container button{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        font-size: 14px;
+    }
+    .header-container img{
+        width: 120px;}
+    .wrapper{
+        padding: 0;
+    }
+    .game{
+        align-items: start;
+        padding-top: 0px;
+    } 
+  }

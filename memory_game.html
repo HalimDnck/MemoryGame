@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - Halim Dinckalmis</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-white.png">
+
+    <link rel="stylesheet" href="game_styles.css">
+    <script src="https://kit.fontawesome.com/6ca36d50dd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header-container">
+
+        
+        <a href="memory_game_home.html"><img src="images/full-logo.png" alt="MemoryGame Logo"></a>
+        
+        <button onclick="on()">?</button>
+    </div>
+    
+    <div id="overlay" onclick="off()">
+        <div id="text">How to Play <br> The game starts with all the cards face down and players take turns to turn over two cards. 
+            If the two cards have the same picture, then the player keep the cards, otherwise the computer turn the cards face down again. 
+            Match all the cards to win the game.</div>
+        
+    </div>
+
+    <div class="game">
+        <div class="wrapper">
+            <div class="timer">
+                <label id="minutes">00</label>
+                <label id="colon">:</label>
+                <label id="seconds">00</label>
+            </div>
+            <ul class="cards">
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-1.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-6.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-3.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-2.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-1.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-5.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-2.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-6.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-3.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-5.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+              <li class="card">
+                <div class="view front-view">
+                  <img src="images/que_icon.svg" alt="icon">
+                </div>
+                <div class="view back-view">
+                  <img src="images/img-4.png" alt="card-img">
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="game.js"></script>
+</body>
+</html>

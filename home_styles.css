@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding:1px 20px ;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.logo-container{
+    height: 10%;
+    display: flex;
+    align-items: self-start;
+    justify-content: center;
+}
+.logo-container img{
+    width: 250px;
+    height: auto;
+    
+}
+
+.playGame-container{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playGame-container button{
+    width: 350px;
+    height: 100px;
+    font-size: 36px;
+    color: rgba(255,255,255, 1);
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+    border: none;
+    border-radius: 30px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+.playGame-container button:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 360px;
+    height: 105px;
+    transition: all 0.2s;
+    font-size: 38px;
+    opacity: 1;
+}
+
+.footer-container{
+    height: 10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.name-footer a,p{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.name-footer a{
+    padding-left: 7px;
+    text-decoration: underline ;
+    text-decoration-thickness: .2px;
+}
+
+.logos-footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: ce;
+}
+.logos-footer li{
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+.logos-footer a{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+}
